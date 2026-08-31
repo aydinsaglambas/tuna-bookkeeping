@@ -303,7 +303,7 @@
     if (!ok) { status.textContent = ""; return; }
 
     // Send the enquiry as a pre-filled WhatsApp message (no email, no backend).
-    var WA_NUMBER = "4475008041819";
+    var WA_NUMBER = "447508041819";
     var name = document.getElementById("name").value.trim();
     var email = document.getElementById("email").value.trim();
     var business = document.getElementById("business").value.trim();
