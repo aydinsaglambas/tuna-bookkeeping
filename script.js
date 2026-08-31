@@ -74,10 +74,15 @@
       "form.email": "Email",
       "form.business": "Business (optional)",
       "form.message": "How can we help?",
-      "form.send": "Send message",
+      "form.send": "Send via WhatsApp",
       "form.err.required": "This field is required.",
       "form.err.email": "Please enter a valid email.",
-      "form.ok": "Thanks. We will be in touch within one working day.",
+      "form.ok": "Opening WhatsApp with your message. Tap send to reach us.",
+      "wa.msg.intro": "Hello Tuna Bookkeeping, I would like to get in touch.",
+      "wa.msg.name": "Name:",
+      "wa.msg.email": "Email:",
+      "wa.msg.business": "Business:",
+      "wa.msg.message": "Message:",
 
       "footer.tag": "Bookkeeping and financial consultancy for UK and international businesses.",
       "footer.reg": "Harpenden, Hertfordshire, United Kingdom.",
@@ -162,10 +167,15 @@
       "form.email": "E-posta",
       "form.business": "İşletme (opsiyonel)",
       "form.message": "Nasıl yardımcı olabiliriz?",
-      "form.send": "Mesaj gönder",
+      "form.send": "WhatsApp ile gönder",
       "form.err.required": "Bu alan zorunludur.",
       "form.err.email": "Lütfen geçerli bir e-posta girin.",
-      "form.ok": "Teşekkürler. Bir iş günü içinde size döneceğiz.",
+      "form.ok": "Mesajınızla WhatsApp açılıyor. Bize ulaşmak için gönder'e dokunun.",
+      "wa.msg.intro": "Merhaba Tuna Bookkeeping, sizinle iletişime geçmek istiyorum.",
+      "wa.msg.name": "Ad:",
+      "wa.msg.email": "E-posta:",
+      "wa.msg.business": "İşletme:",
+      "wa.msg.message": "Mesaj:",
 
       "footer.tag": "UK ve uluslararası işletmeler için muhasebe ve mali danışmanlık.",
       "footer.reg": "Harpenden, Hertfordshire, Birleşik Krallık.",
@@ -292,8 +302,25 @@
 
     if (!ok) { status.textContent = ""; return; }
 
-    // No backend wired yet. Replace with your form handler / email service.
+    // Send the enquiry as a pre-filled WhatsApp message (no email, no backend).
+    var WA_NUMBER = "4475008041819";
+    var name = document.getElementById("name").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var business = document.getElementById("business").value.trim();
+    var message = document.getElementById("message").value.trim();
+
+    var lines = [
+      t("wa.msg.intro"),
+      t("wa.msg.name") + " " + name,
+      t("wa.msg.email") + " " + email
+    ];
+    if (business) lines.push(t("wa.msg.business") + " " + business);
+    lines.push(t("wa.msg.message") + " " + message);
+
+    var url = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(lines.join("\n"));
     status.textContent = t("form.ok");
+    window.open(url, "_blank", "noopener");
+
     form.reset();
     form.querySelectorAll(".field__error").forEach(function (el) { el.textContent = ""; });
     form.querySelectorAll(".is-touched").forEach(function (el) { el.classList.remove("is-touched"); });

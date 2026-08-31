@@ -293,7 +293,9 @@
             <textarea id="message" name="message" rows="4" required></textarea>
             <p class="field__error" data-for="message"></p>
           </div>
-          <button class="btn btn--solid btn--block btn--lg" type="submit" id="submitBtn" data-i18n="form.send">Send message</button>
+          <button class="btn btn--solid btn--block btn--lg" type="submit" id="submitBtn">
+            <i class="ph ph-whatsapp-logo" aria-hidden="true"></i> <span data-i18n="form.send">Send via WhatsApp</span>
+          </button>
           <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
         </form>
       </div>
