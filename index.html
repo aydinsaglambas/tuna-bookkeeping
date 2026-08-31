@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tuna Bookkeeping and Financial Consultancy | UK bookkeeping, tax &amp; payroll</title>
+  <meta name="description" content="UK bookkeeping and financial consultancy for owner-managed and international businesses. Reachable, flexible and current with UK regulations. Based in Harpenden, established 2021." />
+
+  <link rel="icon" href="assets/TunaMainLogo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="brand" href="#top" aria-label="Tuna Bookkeeping and Financial Consultancy home">
+        <img src="assets/TunaMainLogo.png" alt="Tuna Bookkeeping and Financial Consultancy" class="brand__logo" width="200" height="84" />
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#how" data-i18n="nav.how">How it works</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="nav__actions">
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" class="lang__btn is-active" data-lang="en">EN</button>
+          <button type="button" class="lang__btn" data-lang="tr">TR</button>
+        </div>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+          <i class="ph ph-moon" aria-hidden="true"></i>
+        </button>
+        <a class="btn btn--solid nav__cta" href="#contact" data-i18n="cta.book">Book a call</a>
+        <button class="nav__burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav__mobile" id="navMobile" hidden>
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#how" data-i18n="nav.how">How it works</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+      <a class="btn btn--solid" href="#contact" data-i18n="cta.book">Book a call</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <span id="top"></span>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="hero__grid">
+        <div class="hero__content reveal">
+          <p class="eyebrow" data-i18n="hero.eyebrow">UK bookkeeping &amp; financial consultancy</p>
+          <h1 class="hero__title" data-i18n="hero.title">Bookkeeping you can actually reach.</h1>
+          <p class="hero__sub" data-i18n="hero.sub">
+            We keep UK owner-managed and international businesses compliant and tidy,
+            with flexible hours and straight answers.
+          </p>
+          <div class="hero__cta">
+            <a class="btn btn--solid btn--lg" href="#contact">
+              <span data-i18n="cta.book">Book a call</span> <i class="ph ph-arrow-right" aria-hidden="true"></i>
+            </a>
+            <a class="btn btn--ghost btn--lg" href="https://wa.me/905327420291" target="_blank" rel="noopener">
+              <i class="ph ph-whatsapp-logo" aria-hidden="true"></i> <span data-i18n="cta.whatsapp">WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__media reveal">
+          <img
+            src="assets/hero-workspace.jpg"
+            alt="A calm, tidy workspace with a laptop showing accounts, coffee and neatly stacked paperwork"
+            width="340" height="800" loading="eager" />
+          <div class="hero__badge">
+            <span class="hero__badge-num">2021</span>
+            <span class="hero__badge-label" data-i18n="hero.badge">UK firm, based in Harpenden</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TRUST STRIP ===================== -->
+    <section class="trust" aria-label="At a glance">
+      <ul class="trust__row">
+        <li><i class="ph ph-shield-check" aria-hidden="true"></i> <span data-i18n="trust.reg">UK registered, established 2021</span></li>
+        <li><i class="ph ph-clock-countdown" aria-hidden="true"></i> <span data-i18n="trust.hours">Flexible working hours</span></li>
+        <li><i class="ph ph-translate" aria-hidden="true"></i> <span data-i18n="trust.lang">Support in English &amp; Turkish</span></li>
+        <li><i class="ph ph-globe-hemisphere-west" aria-hidden="true"></i> <span data-i18n="trust.intl">UK &amp; international clients</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================== SERVICES ===================== -->
+    <section class="services" id="services">
+      <div class="services__head reveal">
+        <p class="eyebrow" data-i18n="services.eyebrow">What we do</p>
+        <h2 class="section-title" data-i18n="services.title">Everything your books need, in one place.</h2>
+      </div>
+
+      <div class="services__bento">
+        <article class="svc svc--lead reveal">
+          <div class="svc__icon"><i class="ph ph-notebook" aria-hidden="true"></i></div>
+          <h3 data-i18n="svc.book.t">Bookkeeping</h3>
+          <p data-i18n="svc.book.d">Day-to-day records and bank reconciliation, kept accurate and up to date so you always know where you stand.</p>
+        </article>
+
+        <article class="svc reveal">
+          <div class="svc__icon"><i class="ph ph-receipt" aria-hidden="true"></i></div>
+          <h3 data-i18n="svc.vat.t">VAT &amp; Tax Returns</h3>
+          <p data-i18n="svc.vat.d">MTD-ready VAT and returns prepared and filed on time, in line with current and upcoming UK regulations.</p>
+        </article>
+
+        <article class="svc svc--brand reveal">
+          <div class="svc__icon"><i class="ph ph-users-three" aria-hidden="true"></i></div>
+          <h3 data-i18n="svc.pay.t">Payroll &amp; HR</h3>
+          <p data-i18n="svc.pay.d">Fully managed payroll, PAYE and HR support so your team is paid correctly and on time.</p>
+        </article>
+
+        <article class="svc reveal">
+          <div class="svc__icon"><i class="ph ph-chart-line-up" aria-hidden="true"></i></div>
+          <h3 data-i18n="svc.rep.t">Management Reporting</h3>
+          <p data-i18n="svc.rep.d">Clear monthly management accounts and reporting that turn your numbers into decisions.</p>
+        </article>
+
+        <article class="svc reveal">
+          <div class="svc__icon"><i class="ph ph-scales" aria-hidden="true"></i></div>
+          <h3 data-i18n="svc.legal.t">Company &amp; Legal Support</h3>
+          <p data-i18n="svc.legal.d">Company secretarial and corporate guidance through board matters, restructuring and the business lifecycle.</p>
+        </article>
+
+        <article class="svc svc--wide reveal">
+          <div class="svc__icon"><i class="ph ph-globe-stand" aria-hidden="true"></i></div>
+          <h3 data-i18n="svc.intl.t">International &amp; Corporate Services</h3>
+          <p data-i18n="svc.intl.d">Cross-border support for fund, asset and corporate structures, coordinated across the UK and Turkey.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== HOW IT WORKS ===================== -->
+    <section class="how" id="how">
+      <div class="how__head reveal">
+        <h2 class="section-title" data-i18n="how.title">Simple to start, easy to stay.</h2>
+        <p class="section-lead" data-i18n="how.lead">A personal service that grows with you. No jargon, no surprises at year end.</p>
+      </div>
+
+      <ol class="how__steps">
+        <li class="step reveal">
+          <span class="step__no">1</span>
+          <h3 data-i18n="how.s1.t">Free consultation</h3>
+          <p data-i18n="how.s1.d">We get to know your business, your numbers and where you want to go.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__no">2</span>
+          <h3 data-i18n="how.s2.t">A clear, tailored quote</h3>
+          <p data-i18n="how.s2.d">Fixed pricing based on your size and complexity, agreed upfront with no hidden costs.</p>
+        </li>
+        <li class="step reveal">
+          <span class="step__no">3</span>
+          <h3 data-i18n="how.s3.t">Ongoing support</h3>
+          <p data-i18n="how.s3.d">Monthly bookkeeping, reporting and a person who actually answers when you call.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===================== ABOUT / WHY ===================== -->
+    <section class="about" id="about">
+      <div class="about__inner reveal">
+        <p class="eyebrow eyebrow--light" data-i18n="about.eyebrow">About Tuna</p>
+        <h2 class="about__title" data-i18n="about.title">A UK firm that stays close to your business.</h2>
+        <p class="about__body" data-i18n="about.body">
+          Tuna Bookkeeping and Financial Consultancy is a UK firm established in 2021, based in
+          Harpenden and led by Sevil Tuna. We support owner-managed and international businesses
+          with bookkeeping, tax and payroll. Clients stay with us because we are genuinely
+          reachable, keep flexible hours across time zones, and stay current with UK regulations.
+        </p>
+        <dl class="about__facts">
+          <div><dt data-i18n="about.f1.t">Founded</dt><dd data-i18n="about.f1.d">2021, in England</dd></div>
+          <div><dt data-i18n="about.f2.t">Based in</dt><dd data-i18n="about.f2.d">Harpenden, Hertfordshire</dd></div>
+          <div><dt data-i18n="about.f3.t">Led by</dt><dd data-i18n="about.f3.d">Sevil Tuna, Founder</dd></div>
+        </dl>
+
+        <div class="founder">
+          <img class="founder__avatar" src="assets/sevil-tuna.jpg" alt="Sevil Tuna, Founder and General Manager" width="110" height="110" loading="lazy" />
+          <div class="founder__body">
+            <p class="founder__name">Sevil Tuna</p>
+            <p class="founder__role" data-i18n="founder.role">Founder &amp; General Manager</p>
+            <p class="founder__bio" data-i18n="founder.bio">
+              Born in Izmir in 1978, Sevil graduated from Anadolu University's Faculty of
+              Economics and Administrative Sciences in 2002. After years with national Turkish
+              firms including Inci Holding, she founded Tuna Mali Musavirlik in 2016 and
+              established Tuna Bookkeeping and Financial Consultancy in England in 2021. She works
+              in both English and Turkish across accounting and tax, asset management, payroll and
+              HR, capital markets, and grants and incentives.
+            </p>
+            <a class="founder__mail" href="mailto:sevil@tunabookkeeping.co.uk">sevil@tunabookkeeping.co.uk</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TESTIMONIALS ===================== -->
+    <section class="quotes" aria-label="What clients say">
+      <div class="quotes__head reveal">
+        <h2 class="section-title" data-i18n="quotes.title">Trusted by growing UK businesses.</h2>
+      </div>
+      <div class="quotes__grid">
+        <figure class="quote reveal">
+          <blockquote data-i18n="q1.text">Even with a three hour time difference between Turkey and England, every service is delivered on time and to a high standard.</blockquote>
+          <figcaption>
+            <span class="quote__name">Muvaffak Amasya</span>
+            <span class="quote__role">General Manager, Siskon Industrial Automation Systems</span>
+          </figcaption>
+        </figure>
+        <figure class="quote reveal">
+          <blockquote data-i18n="q2.text">Their knowledge stays current with both today's and upcoming regulations, and they are genuinely reachable with flexible hours.</blockquote>
+          <figcaption>
+            <span class="quote__name">S. Cebeli Karaman</span>
+            <span class="quote__role">General Manager, Medlife Homecare Ltd</span>
+          </figcaption>
+        </figure>
+        <figure class="quote reveal">
+          <blockquote data-i18n="q3.text">The guidance and knowledge they shared with our company throughout the consultancy has been genuinely valuable.</blockquote>
+          <figcaption>
+            <span class="quote__name">Güven Serçe</span>
+            <span class="quote__role">General Manager, Bavette Steak Restaurant Ltd</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===================== PRICING STATEMENT ===================== -->
+    <section class="pricing">
+      <div class="pricing__inner reveal">
+        <h2 class="section-title section-title--center" data-i18n="pricing.title">Bespoke pricing, no hidden costs.</h2>
+        <p class="pricing__lead" data-i18n="pricing.lead">
+          Every business is different, so we quote on your size and complexity and agree it
+          with you upfront. Clear and honest, from day one.
+        </p>
+        <a class="btn btn--solid btn--lg" href="#contact"><span data-i18n="cta.quote">Get a tailored quote</span> <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section class="contact" id="contact">
+      <div class="contact__grid">
+        <div class="contact__intro reveal">
+          <p class="eyebrow" data-i18n="contact.eyebrow">Get in touch</p>
+          <h2 class="section-title" data-i18n="contact.title">Let's sort your books.</h2>
+          <p class="contact__lead" data-i18n="contact.lead">
+            Tell us a little about your business and we will come back within one working day.
+          </p>
+
+          <ul class="contact__details">
+            <li>
+              <i class="ph ph-phone" aria-hidden="true"></i>
+              <a href="tel:+44075008041819">+44 075008041819</a>
+            </li>
+            <li>
+              <i class="ph ph-whatsapp-logo" aria-hidden="true"></i>
+              <a href="https://wa.me/905327420291" target="_blank" rel="noopener">+90 532 742 0291</a>
+            </li>
+            <li>
+              <i class="ph ph-envelope-simple" aria-hidden="true"></i>
+              <a href="mailto:sevil@tunabookkeeping.co.uk">sevil@tunabookkeeping.co.uk</a>
+            </li>
+            <li>
+              <i class="ph ph-map-pin" aria-hidden="true"></i>
+              <span>Office 2, Bennet's House, 21 Leyton Road, Harpenden, Hertfordshire, AL5 2HU</span>
+            </li>
+          </ul>
+        </div>
+
+        <form class="contact__form reveal" id="contactForm" novalidate>
+          <div class="field">
+            <label for="name" data-i18n="form.name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required />
+            <p class="field__error" data-for="name"></p>
+          </div>
+          <div class="field">
+            <label for="email" data-i18n="form.email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required />
+            <p class="field__error" data-for="email"></p>
+          </div>
+          <div class="field">
+            <label for="business" data-i18n="form.business">Business (optional)</label>
+            <input type="text" id="business" name="business" autocomplete="organization" />
+          </div>
+          <div class="field">
+            <label for="message" data-i18n="form.message">How can we help?</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <p class="field__error" data-for="message"></p>
+          </div>
+          <button class="btn btn--solid btn--block btn--lg" type="submit" id="submitBtn" data-i18n="form.send">Send message</button>
+          <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <img src="assets/TunaMainLogo.png" alt="Tuna Bookkeeping and Financial Consultancy" class="footer__logo" width="220" height="92" />
+        <p data-i18n="footer.tag">Bookkeeping and financial consultancy for UK and international businesses.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#how" data-i18n="nav.how">How it works</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="footer__meta">
+        <p>&copy; <span id="year"></span> Tuna Bookkeeping and Financial Consultancy Ltd.</p>
+        <p class="footer__reg" data-i18n="footer.reg">Harpenden, Hertfordshire, United Kingdom.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
