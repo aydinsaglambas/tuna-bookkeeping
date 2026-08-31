@@ -121,7 +121,7 @@ img { max-width: 100%; display: block; }
 }
 .nav__inner {
   max-width: var(--maxw); margin: 0 auto;
-  display: flex; align-items: center; gap: 24px;
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px;
   padding: 16px 24px; height: 128px;
 }
 .brand { display: flex; align-items: center; }
@@ -129,7 +129,7 @@ img { max-width: 100%; display: block; }
 :root[data-theme="dark"] .brand__logo,
 .footer__logo { }
 
-.nav__links { display: flex; gap: 26px; margin-left: 8px; }
+.nav__links { display: flex; gap: 26px; justify-self: center; }
 .nav__links a {
   color: var(--ink); text-decoration: none; font-weight: 500; font-size: 0.98rem;
   padding: 6px 0; position: relative;
@@ -140,7 +140,7 @@ img { max-width: 100%; display: block; }
 }
 .nav__links a:hover::after { width: 100%; }
 
-.nav__actions { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+.nav__actions { justify-self: end; display: flex; align-items: center; gap: 12px; }
 
 .lang { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
 .lang__btn {
@@ -397,6 +397,55 @@ img { max-width: 100%; display: block; }
 .footer__nav a:hover { color: var(--brand); }
 .footer__meta { text-align: right; color: var(--muted); font-size: 0.9rem; }
 .footer__meta p { margin: 0 0 6px; }
+.footer__link {
+  background: none; border: 0; padding: 0; font: inherit; cursor: pointer;
+  color: var(--brand); font-weight: 600; text-decoration: underline;
+}
+.footer__link:hover { color: var(--brand-strong); }
+
+/* ---------- Cookie consent ---------- */
+.cookie {
+  position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 150;
+  max-width: 780px; margin: 0 auto;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+  box-shadow: var(--shadow-md); padding: 16px 20px;
+  display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+}
+.cookie[hidden] { display: none; }
+.cookie__text { margin: 0; color: var(--ink); font-size: 0.9rem; line-height: 1.5; flex: 1 1 340px; }
+.cookie__actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-left: auto; }
+.cookie__actions .btn { --pad-y: 9px; --pad-x: 18px; font-size: 0.9rem; }
+.cookie__link {
+  background: none; border: 0; padding: 6px; font: inherit; font-weight: 600; cursor: pointer;
+  color: var(--brand); text-decoration: underline;
+}
+.cookie__link:hover { color: var(--brand-strong); }
+
+/* ---------- Modal ---------- */
+.modal { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; padding: 20px; }
+.modal[hidden] { display: none; }
+.modal__backdrop { position: absolute; inset: 0; background: rgba(9, 30, 52, 0.55); backdrop-filter: blur(3px); }
+.modal__panel {
+  position: relative; z-index: 1; width: min(560px, 100%);
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md); padding: clamp(24px, 4vw, 38px); max-height: 85vh; overflow: auto;
+}
+.modal__close {
+  position: absolute; top: 14px; right: 14px; width: 40px; height: 40px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--bg); color: var(--ink); cursor: pointer;
+  display: grid; place-items: center; font-size: 1.15rem;
+}
+.modal__close:hover { border-color: var(--brand); color: var(--brand); }
+.modal__title { margin: 0 0 16px; color: var(--navy); font-size: clamp(1.35rem, 3vw, 1.7rem); }
+.modal__body p { color: var(--muted); margin: 0 0 14px; font-size: 0.98rem; }
+.modal__status { color: var(--brand); font-weight: 600; min-height: 1.2em; }
+.modal__foot { display: flex; gap: 10px; justify-content: flex-end; margin-top: 22px; }
+
+@media (max-width: 560px) {
+  .cookie { flex-direction: column; align-items: stretch; }
+  .cookie__actions { margin-left: 0; justify-content: space-between; }
+  .cookie__actions .btn { flex: 1; }
+}
 
 /* ---------- Reveal animation ---------- */
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }

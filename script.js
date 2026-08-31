@@ -80,7 +80,19 @@
       "form.ok": "Thanks. We will be in touch within one working day.",
 
       "footer.tag": "Bookkeeping and financial consultancy for UK and international businesses.",
-      "footer.reg": "Harpenden, Hertfordshire, United Kingdom."
+      "footer.reg": "Harpenden, Hertfordshire, United Kingdom.",
+      "footer.cookies": "Cookie policy",
+
+      "cookie.text": "We use essential cookies to make this site work, and optional ones to understand how it is used. You can accept or reject the optional cookies.",
+      "cookie.accept": "Accept",
+      "cookie.reject": "Reject",
+      "cookie.policy": "Cookie policy",
+      "policy.title": "Cookie Policy",
+      "policy.p1": "Cookies are small files stored on your device. This site uses a small number of them, described below.",
+      "policy.p2": "Essential cookies keep the site working, for example remembering your language and light or dark theme. These are always on because the site needs them.",
+      "policy.p3": "Optional cookies would help us understand how the site is used. They are only set if you choose Accept, and none are loaded if you choose Reject. You can change your choice at any time from this Cookie policy link in the footer.",
+      "cookie.status.accepted": "Your current choice: optional cookies accepted.",
+      "cookie.status.rejected": "Your current choice: optional cookies rejected."
     },
     tr: {
       "a11y.skip": "İçeriğe geç",
@@ -156,7 +168,19 @@
       "form.ok": "Teşekkürler. Bir iş günü içinde size döneceğiz.",
 
       "footer.tag": "UK ve uluslararası işletmeler için muhasebe ve mali danışmanlık.",
-      "footer.reg": "Harpenden, Hertfordshire, Birleşik Krallık."
+      "footer.reg": "Harpenden, Hertfordshire, Birleşik Krallık.",
+      "footer.cookies": "Çerez politikası",
+
+      "cookie.text": "Bu sitenin çalışması için zorunlu çerezler ve sitenin nasıl kullanıldığını anlamak için isteğe bağlı çerezler kullanıyoruz. İsteğe bağlı çerezleri kabul edebilir veya reddedebilirsiniz.",
+      "cookie.accept": "Kabul et",
+      "cookie.reject": "Reddet",
+      "cookie.policy": "Çerez politikası",
+      "policy.title": "Çerez Politikası",
+      "policy.p1": "Çerezler, cihazınızda saklanan küçük dosyalardır. Bu site aşağıda açıklanan az sayıda çerez kullanır.",
+      "policy.p2": "Zorunlu çerezler sitenin çalışmasını sağlar; örneğin dil tercihinizi ve açık/koyu temayı hatırlar. Site bunlara ihtiyaç duyduğu için her zaman açıktır.",
+      "policy.p3": "İsteğe bağlı çerezler, sitenin nasıl kullanıldığını anlamamıza yardımcı olur. Yalnızca 'Kabul et' derseniz ayarlanır; 'Reddet' derseniz hiçbiri yüklenmez. Seçiminizi istediğiniz zaman alt bilgideki bu Çerez politikası bağlantısından değiştirebilirsiniz.",
+      "cookie.status.accepted": "Mevcut seçiminiz: isteğe bağlı çerezler kabul edildi.",
+      "cookie.status.rejected": "Mevcut seçiminiz: isteğe bağlı çerezler reddedildi."
     }
   };
 
@@ -176,6 +200,7 @@
     });
     try { localStorage.setItem("tuna-lang", lang); } catch (e) {}
     docEl.setAttribute("data-lang", lang);
+    if (typeof updateStatus === "function") updateStatus();
   }
 
   var savedLang = "en";
@@ -277,6 +302,61 @@
   form.querySelectorAll("input, textarea").forEach(function (f) {
     f.addEventListener("blur", function () { if (f.classList.contains("is-touched") || f.value) validateField(f); });
   });
+
+  /* ---------- Cookie consent (self-contained, no third party) ---------- */
+  var CONSENT_KEY = "tuna-cookie-consent";
+  var banner = document.getElementById("cookieBanner");
+  var modal = document.getElementById("cookieModal");
+  var statusEl = document.getElementById("cookieStatus");
+
+  function getConsent() {
+    try { return localStorage.getItem(CONSENT_KEY); } catch (e) { return null; }
+  }
+  function setConsent(value) {
+    try { localStorage.setItem(CONSENT_KEY, value); } catch (e) {}
+    if (banner) banner.hidden = true;
+    updateStatus();
+    // Optional (analytics) cookies would only be initialised here when value === "accepted".
+    // Nothing is loaded on "rejected".
+  }
+  function updateStatus() {
+    if (!statusEl) return;
+    var c = getConsent();
+    statusEl.textContent = c ? t("cookie.status." + c) : "";
+  }
+
+  if (banner && !getConsent()) banner.hidden = false;
+
+  function openModal() {
+    if (!modal) return;
+    updateStatus();
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+    var closeBtn = modal.querySelector(".modal__close");
+    if (closeBtn) closeBtn.focus();
+  }
+  function closeModal() {
+    if (!modal) return;
+    modal.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  function on(id, fn) { var el = document.getElementById(id); if (el) el.addEventListener("click", fn); }
+  on("cookieAccept", function () { setConsent("accepted"); });
+  on("cookieReject", function () { setConsent("rejected"); });
+  on("modalAccept", function () { setConsent("accepted"); closeModal(); });
+  on("modalReject", function () { setConsent("rejected"); closeModal(); });
+  on("cookiePolicyLink", openModal);
+  on("footerCookie", openModal);
+
+  if (modal) {
+    modal.querySelectorAll("[data-close]").forEach(function (el) {
+      el.addEventListener("click", closeModal);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !modal.hidden) closeModal();
+    });
+  }
 
   /* ---------- Year ---------- */
   var yearEl = document.getElementById("year");
